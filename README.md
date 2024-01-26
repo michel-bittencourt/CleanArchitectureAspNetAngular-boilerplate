@@ -1,1 +1,0 @@
-# TechMinds-ERP

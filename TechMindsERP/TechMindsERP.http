@@ -1,0 +1,6 @@
+@TechMindsERP_HostAddress = http://localhost:5155
+
+GET {{TechMindsERP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
