@@ -8,9 +8,11 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
-        builder.HasKey(t => t.ID);
+        builder.HasKey(p => p.Id);
         builder.Property(t => t.Name)
             .HasMaxLength(50)
             .IsRequired();
+        builder.Property(t => t.Description)
+            .HasMaxLength(150);
     }
 }

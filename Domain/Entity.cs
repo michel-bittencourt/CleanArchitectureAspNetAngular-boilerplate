@@ -8,14 +8,14 @@ public abstract class Entity : Notifiable<Notification>
 }
 public abstract class EntityID : Entity
 {
-    public int ID { get; private set; }
+    public int Id { get; private set; }
 }
 
 public abstract class EntityGUID : Entity
 {
     public EntityGUID()
     {
-        ID = Guid.NewGuid();
+        Id = Guid.NewGuid();
     }
-    public Guid ID { get; set; }
+    public Guid Id { get; set; }
 }
