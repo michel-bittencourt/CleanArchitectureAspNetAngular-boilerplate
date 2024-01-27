@@ -1,6 +1,8 @@
-﻿namespace Domain;
+﻿using Flunt.Notifications;
 
-public abstract class Entity
+namespace Domain;
+
+public abstract class Entity : Notifiable<Notification>
 {
 
 }
@@ -11,6 +13,9 @@ public abstract class EntityID : Entity
 
 public abstract class EntityGUID : Entity
 {
-    public Guid GUID { get; private set; }
+    public EntityGUID()
+    {
+        ID = Guid.NewGuid();
+    }
+    public Guid ID { get; set; }
 }
-

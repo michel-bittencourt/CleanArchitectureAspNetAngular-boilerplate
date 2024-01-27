@@ -1,4 +1,6 @@
-﻿namespace Domain;
+﻿using Flunt.Validations;
+
+namespace Domain;
 
 public sealed class Product : EntityID
 {
@@ -10,6 +12,10 @@ public sealed class Product : EntityID
 
     public Product(string name, string description, decimal purchasePrice, decimal sellingPrice, int stokeQuantity)
     {
+        var contract = new Contract<Product>()
+            .IsNotNull(name, "Name", "Name is not null");
+        AddNotifications(contract);
+
         Name = name;
         Description = description;
         PurchasePrice = purchasePrice;
