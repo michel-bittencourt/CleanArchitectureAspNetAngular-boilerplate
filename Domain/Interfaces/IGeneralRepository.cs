@@ -1,6 +1,6 @@
 ﻿namespace Database;
 
-internal interface IGeneralRepository
+public interface IGeneralRepository
 {
     void Add<T>(T entity) where T : class;
     void Update<T>(T entity) where T : class;
