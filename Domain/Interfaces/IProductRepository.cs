@@ -1,5 +1,4 @@
-﻿using Database;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace Domain.Interfaces;
 

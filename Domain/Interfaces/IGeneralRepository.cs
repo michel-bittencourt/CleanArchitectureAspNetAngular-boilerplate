@@ -1,4 +1,4 @@
-﻿namespace Database;
+﻿namespace Domain.Interfaces;
 
 public interface IGeneralRepository
 {
