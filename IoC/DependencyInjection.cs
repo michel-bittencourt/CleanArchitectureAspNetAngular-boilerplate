@@ -1,4 +1,7 @@
-﻿using Database.Context;
+﻿using Application.Interfaces;
+using Application.Mappings;
+using Application.Services;
+using Database.Context;
 using Database.Repositories;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +19,8 @@ public static class DependencyInjection
         b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IProductService, ProductService>();
+        services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
         return services;
     }
