@@ -22,4 +22,19 @@ public class ProductRepository : IProductRepository
     {
         return await _productContext.Products.FindAsync(id);
     }
+
+    public Task Add<T>(T entity) where T : class
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Update<T>(T entity) where T : class
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Remove<T>(T entity) where T : class
+    {
+        throw new NotImplementedException();
+    }
 }
