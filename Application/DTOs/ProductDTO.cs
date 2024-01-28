@@ -13,7 +13,10 @@ public class ProductDTO
 
     [MinLength(3)]
     [MaxLength(150)]
-    public string Description { get; set; }
+    public string? Description { get; set; }
+
+    [Required(ErrorMessage = "The Selling price is required")]
+    public decimal PurchasePrice { get; set; }
 
     [Required(ErrorMessage = "The Selling price is required")]
     public decimal SellingPrice { get; set; }

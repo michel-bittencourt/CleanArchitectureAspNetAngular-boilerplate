@@ -23,18 +23,21 @@ public class ProductRepository : IProductRepository
         return await _productContext.Products.FindAsync(id);
     }
 
-    public Task Add<T>(T entity) where T : class
+    public async Task Add<T>(T entity) where T : class
     {
-        throw new NotImplementedException();
+        _productContext.Add(entity);
+        await _productContext.SaveChangesAsync();
     }
 
-    public Task Update<T>(T entity) where T : class
+    public async Task Update<T>(T entity) where T : class
     {
-        throw new NotImplementedException();
+        _productContext.Update(entity);
+        await _productContext.SaveChangesAsync();
     }
 
-    public Task Remove<T>(T entity) where T : class
+    public async Task Remove<T>(T entity) where T : class
     {
-        throw new NotImplementedException();
+        _productContext.Remove(entity);
+        await _productContext.SaveChangesAsync();
     }
 }
