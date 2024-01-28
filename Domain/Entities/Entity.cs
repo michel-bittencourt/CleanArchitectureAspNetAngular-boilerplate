@@ -1,6 +1,6 @@
 ﻿using Flunt.Notifications;
 
-namespace Domain;
+namespace Domain.Entities;
 
 public abstract class Entity : Notifiable<Notification>
 {

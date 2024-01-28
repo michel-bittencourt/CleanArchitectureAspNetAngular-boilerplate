@@ -1,6 +1,4 @@
-﻿using Flunt.Validations;
-
-namespace Domain;
+﻿namespace Domain.Entities;
 
 public sealed class Product : EntityID
 {

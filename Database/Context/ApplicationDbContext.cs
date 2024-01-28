@@ -1,4 +1,4 @@
-﻿using Domain;
+﻿using Domain.Entities;
 using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 

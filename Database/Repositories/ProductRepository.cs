@@ -1,5 +1,5 @@
 ﻿using Database.Context;
-using Domain;
+using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
