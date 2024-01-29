@@ -8,7 +8,7 @@ public class ProductUnitTest1
     [Fact(DisplayName = "Create product with valid state")]
     public void CreateProduct_ValidParameters_ResultObjectValidState()
     {
-        Action action = () => new Product("", "Description", 50, 100, 5);
+        Action action = () => new Product("Name", "Description", 50, 100, 5, default, 1);
         action.Should()
             .NotThrow<ArgumentNullException>();
     }

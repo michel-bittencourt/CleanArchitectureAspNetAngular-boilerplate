@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
 
     // Mapeia a entidade Product para a tabela Products
     public DbSet<Product> Products { get; set; }
+    public DbSet<Supplier> Suppliers { get; set; }
 
     // Configura o modelo com fluentAPI
     protected override void OnModelCreating(ModelBuilder modelBuilder)
