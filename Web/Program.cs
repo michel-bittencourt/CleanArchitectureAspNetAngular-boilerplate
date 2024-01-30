@@ -21,6 +21,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//liberando acesso para o FronEnd.
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+});
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

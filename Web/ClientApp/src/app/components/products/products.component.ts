@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,20 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public products: any = [
-    {
-      name: 'Caneca',
-      description: 'Linda',
-    },
-    {
-      name: 'Carro',
-      description: 'Maravilhoso',
-    },
-    {
-      name: 'Fones',
-      description: 'Potentes',
-    },
-  ];
+  public products: any;
 
-  ngOnInit(): void {}
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  public getProducts(): void {
+    this.http.get('http://localhost:5281/api/Product/All').subscribe(
+      (response) => (this.products = response),
+      (error) => console.log(error)
+    );
+  }
 }
