@@ -12,6 +12,7 @@ public sealed class Product : EntityID
     public int SupplierId { get; set; }
     public Supplier Supplier { get; set; }
 
+    public Product() { }
     public Product(string name, string? description, decimal purchasePrice, decimal sellingPrice, int stokeQuantity, DateTime? expiryDate, int supplierId)
     {
         Name = name;
