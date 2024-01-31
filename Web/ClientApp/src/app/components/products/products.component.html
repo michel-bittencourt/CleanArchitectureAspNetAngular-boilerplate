@@ -1,8 +1,26 @@
-<div *ngFor="let product of products">
-  <h3>ID: {{ product.id }}</h3>
-  <p>Name: {{ product.name }}</p>
-  <p>Description: {{ product.description }}</p>
-  <p>Purchase Price: {{ product.purchasePrice }}</p>
-  <p>Selling Price: {{ product.sellingPrice }}</p>
-  <p>Stoke Quantity: {{ product.stokeQuantity }}</p>
+<div class="container mt-2">
+  <table class="table table-striped">
+    <thead>
+      <tr class="table table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Purchase Price</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Stoke Quantity</th>
+        <th scope="col">Expiry Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>R${{ product.purchasePrice | number : "1.2" }}</td>
+        <td>R${{ product.sellingPrice | number : "1.2" }}</td>
+        <td>{{ product.stokeQuantity }}</td>
+        <td>{{ product.expiryDate | date : "dd/MM/yyyy" }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
