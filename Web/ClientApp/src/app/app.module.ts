@@ -14,6 +14,7 @@ import { SuppliersComponent } from './components/suppliers/suppliers.component';
 import { TestesComponent } from './components/testes/testes.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse'
 
 registerLocaleData(localePt);
 
@@ -31,6 +32,7 @@ registerLocaleData(localePt);
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CollapseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
