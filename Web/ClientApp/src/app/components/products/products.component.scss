@@ -1,0 +1,13 @@
+.custom-th {
+  font-size: max(1.2vw, 12px);
+}
+
+.custom-td {
+  font-size: max(1.2vw, 12px);
+}
+
+@media (max-width: 576px) {
+  .mt-sm {
+    margin-top: 10px;
+  }
+}
