@@ -1,8 +1,14 @@
 <div class="container mt-3">
-  <form action="" class="form-inline justify-content-center">
+  <div class="form-inline justify-content-center">
     <div class="row align-items-center">
       <div class="col-lg-4 col-md-5 col-sm-6">
-        <input type="text" class="form-control" placeholder="Search" />
+        <!-- ngModel eh um two-away data binding, tudo que for alterado no ngModel, irá aparecer no listFilter -->
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search"
+          [(ngModel)]="listFilter"
+        />
       </div>
       <div class="col-lg-2 col-md-2 col-sm-3">
         <div class="w-100 d-block d-sm-inline-block mt-sm">
@@ -10,7 +16,9 @@
         </div>
       </div>
     </div>
-  </form>
+  </div>
+
+  <h3>Filter: {{ listFilter }}</h3>
 
   <div class="table-responsive mt-3">
     <ng-container>
@@ -33,7 +41,7 @@
         </thead>
         <!-- Diretivas estruturais -->
         <tbody *ngIf="products; else productsEmpty">
-          <tr *ngFor="let product of products" class="custom-td">
+          <tr *ngFor="let product of filteredProducts" class="custom-td">
             <!-- Fim diretivas estruturais -->
             <th scope="row">{{ product.id }}</th>
             <!-- Properties Bindings -->
