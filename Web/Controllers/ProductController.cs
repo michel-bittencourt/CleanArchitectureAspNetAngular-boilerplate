@@ -14,38 +14,46 @@ public class ProductController : Controller
         _productService = productService;
     }
 
+    #region Metodos
     [HttpPost]
-    public async Task<IActionResult> Post(ProductDTO productDTO)
+    // FromBody diz que os dados serao passados no corpo do request
+    public async Task<ActionResult> Post([FromBody] ProductDTO productDTO)
     {
-        await _productService.Add(productDTO);
-        return Ok();
+        if (productDTO != null)
+        {
+            await _productService.Add(productDTO);
+            return Ok(productDTO);
+        }
+        return BadRequest();
     }
 
     [HttpPut]
-    public async Task<IActionResult> Put(ProductDTO productDTO)
+    public async Task<ActionResult> Put(ProductDTO productDTO)
     {
         await _productService.Update(productDTO);
         return Ok();
     }
 
-    [HttpDelete]
-    public async Task<IActionResult> Remove(int? id)
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<ProductDTO>> Remove(int? id)
     {
-        await _productService.Remove(id);
+        await _productService.Delete(id);
+
         return Ok();
     }
 
-    [HttpGet("All")]
-    public async Task<IActionResult> GetAll()
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAll()
     {
         var products = await _productService.GetProductsAsync();
         return Ok(products);
     }
 
-    [HttpGet("ById")]
-    public async Task<IActionResult> GetById(int? id)
+    [HttpGet("{id:int}" , Name = "GetProduct")]
+    public async Task<ActionResult<ProductDTO>> GetById(int? id)
     {
         var products = await _productService.GetProductByIdAsync(id);
         return Ok(products);
     }
+    #endregion
 }
