@@ -23,6 +23,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(t => t.StokeQuantity)
             .IsRequired();
         builder.Property(t => t.ExpiryDate);
+        builder.Property(t => t.UrlImage);
 
         builder.HasOne(s => s.Supplier)
             .WithMany(p => p.Products)
