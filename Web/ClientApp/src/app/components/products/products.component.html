@@ -31,23 +31,28 @@
             <th scope="col">Expiry</th>
           </tr>
         </thead>
+        <!-- Diretivas estruturais -->
         <tbody *ngIf="products; else productsEmpty">
           <tr *ngFor="let product of products" class="custom-td">
+            <!-- Fim diretivas estruturais -->
             <th scope="row">{{ product.id }}</th>
-            <!-- Interpolação com um binding de product -->
+            <!-- Properties Bindings -->
             <td class="text-center">
               <img
                 *ngIf="product.urlImage && image"
                 class="w-50"
                 src="assets/{{ product.urlImage }}"
               />
+              <!-- Fim properties Bindings -->
             </td>
+            <!-- Interpolação -->
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
             <td>R${{ product.purchasePrice | number : "1.2" }}</td>
             <td>R${{ product.sellingPrice | number : "1.2" }}</td>
             <td>{{ product.stokeQuantity }}</td>
             <td>{{ product.expiryDate | date : "dd/MM/yyyy" }}</td>
+            <!-- Fim interpolação -->
           </tr>
         </tbody>
       </table>
