@@ -8,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   public products: any;
+  image: boolean = true;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.getProducts();
+  }
+
+  public toggleImage():void{
+    this.image = !this.image;
   }
 
   public getProducts(): void {
@@ -21,4 +26,5 @@ export class ProductsComponent implements OnInit {
       (error) => console.log(error)
     );
   }
+
 }

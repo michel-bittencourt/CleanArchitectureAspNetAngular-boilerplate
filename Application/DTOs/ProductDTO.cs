@@ -24,5 +24,6 @@ public class ProductDTO
     [Required(ErrorMessage = "The stoke quantity is required")]
     public int StokeQuantity { get; set; }
     public DateTime? ExpiryDate { get; set; }
+    public string? UrlImage { get; set; }
     public int SupplierId { get; set; }
 }
