@@ -40,7 +40,7 @@
           </tr>
         </thead>
         <!-- Diretivas estruturais -->
-        <tbody *ngIf="products; else productsEmpty">
+        <tbody *ngIf="checkProductExists(); else productsEmpty">
           <tr *ngFor="let product of filteredProducts" class="custom-td">
             <!-- Fim diretivas estruturais -->
             <th scope="row">{{ product.id }}</th>
