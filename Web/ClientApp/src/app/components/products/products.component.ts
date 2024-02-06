@@ -1,10 +1,12 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
+  // Podemos injetar a rota da api por aqui, pelo service ou o melhor que eh pelo app.module
+  // providers: [ProductService],
 })
 export class ProductsComponent implements OnInit {
   public products: any[] = [];
@@ -32,7 +34,7 @@ export class ProductsComponent implements OnInit {
     );
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -42,13 +44,20 @@ export class ProductsComponent implements OnInit {
     this.image = !this.image;
   }
 
+  public checkProductExists(): boolean {
+    if (this.products.length) {
+      return true;
+    }
+    return false;
+  }
+
   public getProducts(): void {
-    this.http.get<any[]>('http://localhost:5281/api/Product/All').subscribe(
-      (response) => {
+    this.productService.getProduct().subscribe(
+      (response: any) => {
         this.products = response;
         this.filteredProducts = this.products;
       },
-      (error) => console.log(error)
+      (error: any) => console.log(error)
     );
   }
 }

@@ -11,11 +11,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/initial/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SuppliersComponent } from './components/suppliers/suppliers.component';
 import { TestesComponent } from './components/testes/testes.component';
+import { ProductService } from './services/product.service';
 
 registerLocaleData(localePt);
 
@@ -36,7 +37,7 @@ registerLocaleData(localePt);
     CollapseModule.forRoot(),
     FormsModule,
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
