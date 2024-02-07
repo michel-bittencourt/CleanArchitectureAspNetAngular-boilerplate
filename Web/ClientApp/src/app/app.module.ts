@@ -17,6 +17,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { SuppliersComponent } from './components/suppliers/suppliers.component';
 import { TestesComponent } from './components/testes/testes.component';
 import { ProductService } from './services/product.service';
+import { DateTimeFormatPipe } from './helpers/Dates/date-time-format.pipe';
+import { DateFormatPipe } from './helpers/Dates/date-format.pipe';
 
 registerLocaleData(localePt);
 
@@ -28,6 +30,8 @@ registerLocaleData(localePt);
     TestesComponent,
     NavComponent,
     HomeComponent,
+    DateTimeFormatPipe,
+    DateFormatPipe,
   ],
   imports: [
     BrowserModule,

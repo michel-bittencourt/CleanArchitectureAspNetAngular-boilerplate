@@ -59,7 +59,7 @@
             <td>R${{ product.purchasePrice | number : "1.2" }}</td>
             <td>R${{ product.sellingPrice | number : "1.2" }}</td>
             <td>{{ product.stokeQuantity }}</td>
-            <td>{{ product.expiryDate | date : "dd/MM/yyyy" }}</td>
+            <td>{{ product.expiryDate | dateFormat_pipe }}</td>
             <!-- Fim interpolação -->
           </tr>
         </tbody>
