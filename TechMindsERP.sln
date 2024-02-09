@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{7944279C-B83E-45EB-8A12-B2C28B6159D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{7944279C-B83E-45EB-8A12-B2C28B6159D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7FC55AE5-795B-43C4-B7CE-1EE9D0903CCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{7FC55AE5-795B-43C4-B7CE-1EE9D0903CCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{FEF6FE2E-42A7-4045-AF72-529A3D0281B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{FEF6FE2E-42A7-4045-AF72-529A3D0281B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{C5099B0A-5036-4284-B070-3DC7962C1B24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{C5099B0A-5036-4284-B070-3DC7962C1B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC", "IoC\IoC.csproj", "{CCB1B91C-F2E1-4C91-A12C-6205FC1FD988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoC", "IoC\IoC.csproj", "{CCB1B91C-F2E1-4C91-A12C-6205FC1FD988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{348D9F1E-8381-4F77-B0CF-1F865D6493A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CCB1B91C-F2E1-4C91-A12C-6205FC1FD988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB1B91C-F2E1-4C91-A12C-6205FC1FD988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB1B91C-F2E1-4C91-A12C-6205FC1FD988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{348D9F1E-8381-4F77-B0CF-1F865D6493A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{348D9F1E-8381-4F77-B0CF-1F865D6493A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{348D9F1E-8381-4F77-B0CF-1F865D6493A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{348D9F1E-8381-4F77-B0CF-1F865D6493A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

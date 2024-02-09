@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">TechMinds-ERP</a>
+    <button
+      class="navbar-toggler"
+      (click)="isCollapsed = !isCollapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      [collapse]="isCollapsed"
+      [isAnimated]="true"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Products</a>
+        <a class="nav-link" href="#">Suppliers</a>
+
+        <!-- DROPDOWN -->
+        <div class="btn-group" dropdown>
+          <button
+            id="button-basic"
+            dropdownToggle
+            type="button"
+            class="btn btn-none dropdown-toggle"
+            aria-controls="dropdown-basic"
+          >
+            Dropdown <span class="caret"></span>
+          </button>
+          <ul
+            id="dropdown-basic"
+            *dropdownMenu
+            class="dropdown-menu"
+            role="menu"
+            aria-labelledby="button-basic"
+          >
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">Drop1</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">Drop2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
